@@ -81,7 +81,7 @@ def update():
             dprint("Finished.")
             return
     
-    today = date.today().isoformat()
+    today = "_".join(date.today().isoformat().split(":"))
     if not os.path.exists(f'data/backups/{today}.html'):
         open(f'data/backups/{today}.html', 'x').close()
     open(f'data/backups/{today}.html', 'w').write(r.content.decode())
